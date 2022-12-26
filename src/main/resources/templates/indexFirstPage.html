@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Index Web Page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .w3-sidebar a {
+            font-family: "Roboto", sans-serif
+        }
+
+        body,h1,h2,h3,h4,h5,h6,
+        .w3-wide {
+            font-family: "Montserrat", sans-serif;
+        }
+    </style>
+</head>
+
+<body style="padding: 50px;" class="w3-content">
+    <div class="w3-padding-large w3-large w3-text-grey">
+        <h1>圖書館訂位中心</h1>
+        <h5 th:text="${member.clientName}"></h5>
+    </div>
+    <nav style="z-index:3;width:250px">
+        <a href="javascript:void(0)" class="w3-bar-item"
+            onclick="document.getElementById('newA').style.display='block'">會員中心</a>
+        <p>
+    </nav>
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-padding-large w3-large w3-text-grey">
+        <!-- Product grid -->
+        <div class="w3-row w3-text-grey">
+            <div class="w3-col l4">
+                <div class="w3-display-container">
+                    <div class="card-body">
+                        <h5 class="card-title">1館</h5>
+                        <p class="card-text">1F電腦教室</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col l4">
+                <div class="w3-display-container">
+                    <div class="card-body">
+                        <h5 class="card-title">2館</h5>
+                        <p class="card-text">2F電腦教室</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col l4">
+                <div class="w3-display-container">
+                    <div class="card-body">
+                        <h5 class="card-title">3館</h5>
+                        <p class="card-text">3F電腦教室</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End page content -->
+    <!-- newA Modal -->
+    <div id="newA" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+            <div class="w3-container w3-white w3-center">
+                <i onclick="document.getElementById('newA').style.display='none'"
+                    class="fa fa-remove w3-right w3-button w3-xxlarge"></i>
+                <!-- Contact Container -->
+                <div class="w3-padding-large w3-large w3-text-grey">
+                    <div class="w3-row w3-col m20">
+                        <form class="w3-container w3-left" target="_blank" style="text-align: left;">
+                            <!--  -->
+                            <h3>登入</h3>
+                            <div>請輸入您的信箱、電話</div><br>
+                            <label>Email</label>
+                            <input id="emailL" class="form-control" type="text" placeholder="請輸入信箱" required>
+                            <br>
+                            <label>Phone</label>
+                            <input id="phoneNumberL" class="form-control" type="text" placeholder="請輸入電話" required>
+                            <br>
+                            <button class="btn btn-primary btn-block" type="button" id="btnL"><b>登入</b></button>
+                            <p>
+                            <div id="displayL"></div>
+                            <br><br>
+                            <!--  -->
+                            <h3>註冊</h3>
+                            <div>請輸入您的姓名、信箱(不能重複)、電話</div>
+                            <label>Name</label>
+                            <input id="clientNameR" class="form-control" type="text" placeholder="請輸入姓名" required>
+                            <br>
+                            <label>Email</label>
+                            <input id="emailR" class="form-control" type="text" placeholder="請輸入信箱" required>
+                            <br>
+                            <label>Phone</label>
+                            <input id="phoneNumberR" class="form-control" type="text" placeholder="請輸入電話" required>
+                            <br>
+                            <button class="btn btn-primary btn-block" type="button" id="btnR"><b>註冊</b></button>
+                            <p>
+                            <div id="displayR"></div>
+                            <br><br>
+                            <!--  -->
+                            <h3>查詢</h3>
+                            <div>請輸入您要查詢的信箱</div>
+                            <label>Email</label>
+                            <input id="emailF" class="form-control" type="text" placeholder="請輸入信箱" required>
+                            <br>
+                            <button class="btn btn-primary btn-block" type="button" id="btnF"><b>查詢</b></button>
+                            <p>
+                            <div id="displayF"></div>
+                            <br><br>
+                            <!--  -->
+                            <h3>修改</h3>
+                            <div>請輸入您要修改的Email。輸入的姓名、電話</div>
+                            <label>Email</label>
+                            <input id="emailE" class="form-control" type="text" placeholder="請輸入信箱" required>
+                            <br>
+                            <label>Name</label>
+                            <input id="clientNameE" class="form-control" type="text" placeholder="請輸入姓名" required>
+                            <label>Phone</label>
+                            <input id="phoneNumberE" class="form-control" type="text" placeholder="請輸入電話" required>
+                            <br>
+                            <button class="btn btn-primary btn-block" type="button" id="btnE"><b>修改</b></button>
+                            <p>
+                            <div id="displayE"></div>
+                            <br><br>
+                            <!--  -->
+                        </form>
+                    </div>
+                </div>
+                <!-- Contact Container -->
+            </div>
+        </div>
+    </div>
+    <!-- newA Modal -->
+
+</body>
+<script>
+    function rs(data) {
+        $("#displayR").html(data);
+    }
+    function rslogin(data) {
+        $("#displayL ").html(data);
+    }
+    function rsfind(data) {
+        $("#displayF").html(data);
+    }
+    function rsset(data) {
+        $("#displayE").html(data);
+    }
+    function send(evt) {
+        evt.preventDefault();
+        var clientName = $("#clientNameR").val();
+        var email = $("#emailR").val();
+        var phoneNumber = $("#phoneNumberR").val();
+        $.post("register", { "clientName": clientName, "email": email, "phoneNumber": phoneNumber }, rs);
+    }
+    function sendlogin(evt) {
+        evt.preventDefault();
+        var email = $("#emailL").val();
+        var phoneNumber = $("#phoneNumberL").val();
+        $.post("login", { "email": email, "phoneNumber": phoneNumber }, rslogin);
+        history.go(0);
+    }
+    function sendfind(evt) {
+        evt.preventDefault();
+        var email = $("#emailF").val();
+        $.post("find", { "email": email }, rsfind);
+    }
+    function sendset(evt) {
+        evt.preventDefault();
+        var email = $("#emailE").val();
+        var clientName = $("#clientNameE").val();
+        var phoneNumber = $("#phoneNumberE").val();
+        $.post("set", { "email": email, "clientName": clientName, "phoneNumber": phoneNumber }, rsset);
+    }
+    function start() {
+        $("#btnR").click(send);
+        $("#btnL").click(sendlogin);
+        $("#btnF").click(sendfind);
+        $("#btnE").click(sendset);
+    }
+    $(document).ready(start);
+</script>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Create New Customer</title>
+</head>
+<body>
+<div class="container" style="margin: 20px">
+<table class="table table-bordered" border=1>
+<tr>
+  <th><b>User Name</b></th>
+  <th><b>User Email</b></th>
+  <th><b>User Phone</b></th>
+</tr>
+<tr th:each="BookingMember : ${findData} " th:object="${BookingMember}">
+        <td th:text="*{clientName}"></td>
+        <td th:text="*{email}"></td>
+        <td th:text="*{phoneNumber}"></td>
+    </tr>
+
+</table>
+</div>
+</body>
+</html>
