@@ -98,4 +98,15 @@ public class BookingController {
 		return view;
 
 	}
+	@PostMapping("add")
+	public ModelAndView add(Bo bo) {
+		ModelAndView view = new ModelAndView("add");
+		MemberData m=new MemberData();
+		bo.setName(md.getClientName());
+		System.out.println(bo.getName());
+		System.out.println(bo.getAdd());
+		view.addObject("addData", bo);
+		return view;
+	}
+	
 }
