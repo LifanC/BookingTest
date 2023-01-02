@@ -1,2 +1,2 @@
 # BookingTest
-README_使用框架 S
+README_使用框架 Spring Boot
