@@ -1,6 +1,7 @@
 package demo.project.entity;
 
 public class Bo {
+	private Integer idbo;
 	private String name;
 	private String add;
 
@@ -12,6 +13,14 @@ public class Bo {
 
 	public Bo(String name, String add) {
 		this.add = add;
+	}
+
+	public Integer getId() {
+		return idbo;
+	}
+
+	public void setId(Integer id) {
+		this.idbo = id;
 	}
 
 	public String getName() {

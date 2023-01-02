@@ -1,5 +1,6 @@
 package demo.project.controller;
 
+import java.sql.SQLException;
 import java.util.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import demo.project.entity.*;
 public class BookingController {
 	@Autowired
 	private BookingRepository bookingRepository;
+	
 	BookingMember bm = new BookingMember();
 	MemberData md=new MemberData("未登入");
 	@GetMapping("index")
@@ -99,9 +101,10 @@ public class BookingController {
 
 	}
 	@PostMapping("add")
-	public ModelAndView add(Bo bo) {
+	public ModelAndView add(Bo bo) throws SQLException {
+		//implbo c=new implbo();
+		//c.add(bo);
 		ModelAndView view = new ModelAndView("add");
-		MemberData m=new MemberData();
 		bo.setName(md.getClientName());
 		System.out.println(bo.getName());
 		System.out.println(bo.getAdd());
