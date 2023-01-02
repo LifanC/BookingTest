@@ -11,9 +11,9 @@
   <th><b>客戶</b></th>
   <th><b>訂位明細</b></th>
 </tr>
-<tr th:each="Bo : ${addData} ">
-		<td th:text="*{Bo.name}"></td>
-        <td th:text="*{Bo.add}"></td>
+<tr th:each="MemberTime : ${addData} ">
+		<td th:text="*{MemberTime.name}"></td>
+        <td th:text="*{MemberTime.timename}"></td>
     </tr>
 
 </table>

@@ -101,13 +101,14 @@ public class BookingController {
 
 	}
 	@PostMapping("add")
-	public ModelAndView add(Bo bo) throws SQLException {
-		//implbo c=new implbo();
-		//c.add(bo);
+	public ModelAndView add(MemberTime bo) throws SQLException {
+		MemberDaoTime mt=new MemberDaoTime();
+		bo.setName(md.getClientName());
+		mt.Insertmember(bo);
 		ModelAndView view = new ModelAndView("add");
 		bo.setName(md.getClientName());
 		System.out.println(bo.getName());
-		System.out.println(bo.getAdd());
+		System.out.println(bo.getTimename());
 		view.addObject("addData", bo);
 		return view;
 	}
